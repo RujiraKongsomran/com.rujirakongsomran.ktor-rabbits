@@ -1,5 +1,6 @@
 package com.rujirakongsomran.plugins
 
+import com.rujirakongsomran.routes.randomRabbit
 import io.ktor.routing.*
 import io.ktor.http.*
 import io.ktor.content.*
@@ -9,11 +10,12 @@ import io.ktor.response.*
 import io.ktor.request.*
 
 fun Application.configureRouting() {
-    
+
 
     routing {
+        randomRabbit()
         // Static plugin. Try to access `/static/index.html`
-        static("/static") {
+        static {
             resources("static")
         }
     }
